@@ -26,7 +26,7 @@ public class TreeNode5 {
         if (node == null) return true;
         boolean a = validator(node.left, min, node.val);
         boolean b = validator(node.right, node.val, max);
-        return a && b && min < node.val && node.val < max;
+        return a && b && min <= node.val && node.val <= max;
     }
 
 
