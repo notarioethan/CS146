@@ -1,1 +1,19 @@
+HW 9
 
+Problem:
+    Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+
+    The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).
+
+    Constraints:
+
+    The number of nodes in the tree is in the range [2, 105].
+    -109 <= Node.val <= 109
+    All values are unique.
+    p != q
+    p and q will exist in the BST.
+
+- use recursive function to traverse through tree
+- if p & q both less than the current node, check left subtree
+- if both more than current node, check right subtree
+- if neither, current node must be least common ancestor
