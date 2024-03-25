@@ -15,11 +15,11 @@ class Solution:
         #Your code here
         if root == None:
             return
-        temp = root.left
-        root.left = root.right
+        temp = self.invertTree(root.left)
+        root.left = self.invertTree(root.right)
         root.right = temp
-        self.invertTree(root.left)
-        self.invertTree(root.right)
+        
+        
         return root
     
     

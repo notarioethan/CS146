@@ -1,8 +1,9 @@
 public class Testing4 {
     public static TreeNode invertTree(TreeNode root) {
 		if (root == null) return root;
+		TreeNode temp = invertTree(root.left);
 		root.left = invertTree(root.right);
-		root.right = invertTree(root.left);
+		root.right = temp;
     	return root;
     }
     
