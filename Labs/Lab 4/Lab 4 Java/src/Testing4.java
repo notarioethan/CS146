@@ -1,6 +1,5 @@
 public class Testing4 {
     public static TreeNode invertTree(TreeNode root) {
-    	//inversion(root);
 		if (root == null) return root;
 		root.left = invertTree(root.right);
 		root.right = invertTree(root.left);
