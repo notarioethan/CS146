@@ -1,8 +1,8 @@
-Lab 5
+# Lab 5
 
-Problem Statement: Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+## Problem Statement: Given the root of a binary tree, determine if it is a valid binary search tree (BST).
 
-Approach:
+### Approach:
 - use recursive helper function with lower and upper bounds as additional parameters to traverse through tree
 - for each node, check 3 conditions:
     1. node's value is between min and max
