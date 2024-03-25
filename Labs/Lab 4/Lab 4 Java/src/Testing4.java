@@ -1,16 +1,12 @@
 public class Testing4 {
     public static TreeNode invertTree(TreeNode root) {
-    	inversion(root);
+    	//inversion(root);
+		if (root == null) return root;
+		root.left = invertTree(root.right);
+		root.right = invertTree(root.left);
     	return root;
     }
-    private static void inversion(TreeNode node) {
-    	if (node == null) return;
-    	TreeNode temp = node.right;
-    	node.right = node.left;
-    	node.left = temp;
-        inversion(node.right);
-    	inversion(node.left);
-    }
+    
     public static void printer(TreeNode node) {//in order traversal
     	printrecursive(node);
     	System.out.println();
@@ -22,6 +18,7 @@ public class Testing4 {
     	printrecursive(node.right);
     }
 	public static void main(String[] args) {
+		//test case 1
 		TreeNode six = new TreeNode(6);
 		TreeNode five = new TreeNode(5);
 		TreeNode three = new TreeNode(3);
