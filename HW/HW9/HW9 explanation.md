@@ -15,6 +15,17 @@
 
 ### Approach
 - use recursive function to traverse through tree
+- return root if it is null (should not happen with given constraints)
 - if p & q both less than the current node, check left subtree
 - if both more than current node, check right subtree
-- if neither, current node must be least common ancestor
+- if neither, current node must be least common ancestor, return it
+
+## Follow-up exercise: Can you think of a way to do this iteratively?
+
+### Approach(not implemented):
+- declare a TreeNode variable (curr) and point it to the root
+    - like traversing a linked list
+- use while loop that is active as long as curr isn't null
+- if p & q both less than curr, point curr to its left child
+- if both more than curr, point curr to its right child
+- if neither, return curr
