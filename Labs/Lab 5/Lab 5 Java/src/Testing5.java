@@ -1,8 +1,8 @@
 public class Testing5 {
     public static boolean isValidBST(TreeNode root) {
-        return validator(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return validator(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
-    private static boolean validator(TreeNode node, int min, int max){
+    private static boolean validator(TreeNode node, long min, long max){
         if (node == null) return true;
         return min < node.val && node.val < max && validator(node.left, min, node.val) && validator(node.right, node.val, max);
     }
