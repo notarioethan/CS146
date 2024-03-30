@@ -27,3 +27,11 @@ Return the modified image after performing the flood fill.
         - if so, add those coordinates to the queue
     - change this pixel's color to the desired color
 - return the image
+
+## Follow-up Question:
+Now that you've solved the problem with one approach, can you think of how to solve it using another approach? It should be fairly straightforward to do, once you've solved the question once. 
+
+### Approach(not implemented):
+- instead of a while loop, use a recursive helper function 
+    - add # of rows, # of columns, color as additional parameters
+    - otherwise the same function as the while loop
