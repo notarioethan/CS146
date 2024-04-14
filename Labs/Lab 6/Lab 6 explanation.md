@@ -15,8 +15,9 @@ Return true if you can finish all courses. Otherwise, return false.
 - All the pairs prerequisites[i] are unique.
 
 ## Approach:
-- you can finish all courses if the order is acyclic; you cannot if it is cyclic
-- use topological sort - Kahn's algorithm
+- simplified: this is a graph of courses
+- you can finish all courses if the graph is acyclic; you cannot if it is cyclic
+- use Kahn's algorithm
     - Kahn's algorithm only works properly on acyclic graphs
     1. create an edge list to hold every course that each course is a prerequisite for
     2. create an array of indegrees to hold the number of prerequisites required for each course
@@ -26,3 +27,12 @@ Return true if you can finish all courses. Otherwise, return false.
     6. the number of courses that can be completed should be the same as the number of courses to take
         - if so, Kahn's algorithm worked properly, return true
         - if not, Kahn's algorithm did not work properly, return false
+
+## Follow-up exercise:
+Can you implement a solution using other approaches, after having solved it once?
+Approach(not implemented):
+- use the same edge list as in Kahn's algorithm
+- create another list of every course's prerequisites
+- use DFS to traverse through every course's next courses(children) to check an ancestor of the original course is reached
+    - if so, graph is cyclic, return false
+    - if not, graph is acyclic, return true
