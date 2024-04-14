@@ -2,7 +2,9 @@ import java.util.*;
 public class Lab6Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         if (prerequisites.length == 0) return true;
+        
         @SuppressWarnings("unchecked")//the squiggles annoy me
+
         List<Integer>[] edges = new List[numCourses];//edgelist for all courses (holds every course that a course is a prereq for)
         int[] indegrees = new int[numCourses];//holds # of indegrees(prereqs) for each course
         List<Integer> satisfied = new ArrayList<Integer>();//list of satisfied courses
