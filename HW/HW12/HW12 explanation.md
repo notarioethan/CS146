@@ -19,3 +19,26 @@ Return the minimum total cost to supply water to all houses.
 
 ## Approach:
 - perform an MST algorithm and return the sum of edge weights
+    - Kruskal's algorithm
+- create an int "sum" & initialize to 0
+- take the info from wells and pipes to create a list of all edges
+- sort the list in non-decreasing order with respect to the costs of each edge
+    - merge sort for stability
+- fill an array of size n + 1 to hold the furthest back ("root") house that each house connects to; call this "sources"
+    - index 0 means a house's own well
+    - all other indexes refer to other houses
+    - starts with all indexes holding the value of the index
+- while traversing through the list of edges
+    - use a recursive helper function to find the ("root") of each house's water
+    - if the roots are unequal
+        - set the first house's root equal to the second house's root
+        - add the cost of the edge to the sum
+        - if all houses have water, return the sum
+    - Kruskal's algorithm: add lowest available edge to solution unless both nodes are in the same tree
+
+### Follow-up question:
+Now that you've solved the problem with one approach, can you think of how to solve it using another approach?
+- Use another MST algorithm such as Prim's algorithm.
+    - Using wells and pipes, create an edge list that also contains weights
+    - Prim's algorithm loop
+        - starting from first house (marked as visited), visit destination of lowest unvisited edge of visited houses and mark as visited
