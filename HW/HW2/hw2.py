@@ -1,3 +1,5 @@
+class Solution(object):
+    def __init__(self) -> None:
         self.bad = 0
     def setBad(self, x):
         self.bad = x
