@@ -2,9 +2,7 @@ import java.util.*;
 
 public class Lab8Solution {
     public int coinChange(int[] coins, int amount) {
-        
         int[] mins = new int[amount + 1];
-        //Arrays.sort(coins);
         Arrays.fill(mins, amount + 1);
         mins[0] = 0;
 
