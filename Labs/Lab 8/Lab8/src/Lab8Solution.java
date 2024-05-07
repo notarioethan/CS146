@@ -8,14 +8,14 @@ public class Lab8Solution {
 
         for (int i = 0; i < coins.length; i++){
             for (int j = 0; j <= amount; j++){
-                find(coins[i], i, j, mins);
+                find(coins[i], j, mins);
             }
         }
 
         if (mins[amount] > amount) return -1;
         return mins[amount];
     }
-    private void find(int cents, int lvl, int amt, int[] mins){
+    private void find(int cents, int amt, int[] mins){
         int quo = amt/cents;
         
         for (int i = quo; i >= 0; i--){
