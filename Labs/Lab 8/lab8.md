@@ -9,16 +9,14 @@ You may assume that you have an infinite number of each kind of coin.
 
 ### Constraints:
 - 1 <= coins.length <= 12
-- 1 <= coins[i] <= 231 - 1
-- 0 <= amount <= 104
+- 1 <= coins[i] <= 2^31 - 1
+- 0 <= amount <= 10^4
 
 ## Approach:
-1. sort coins
-    - assuming array unsorted
-2. binary search for the largest coin less than or equal to amount
-3. for that coin and all that are lower, use BFS to find the least number of coins needed to fulfill the given amount
-    - for example: start at 25, amount -= 25, add this partial solution to a queue, then go to 10, amount -= 10, etc.
-    - what the queue contains: [cents remaining, # of coins used]
-4. repeat 2 and 3 until a solution is found, or until there is no possible solution.
-
-or do knapsack-like algorithm (tabulation)
+- basic idea: tabulation (like the knapsack problem)
+1. create an array to hold the minimum number of coins needed
+    - all indices initially hold the amount of money given + 1, except 0, which holds 0
+2. for every coin value
+    - for every number from 0 to the given amount of money, find the minimum number of coins needed to satisfy that amount
+        - will help in finding minimum amounts for future coin values
+3. if minimum number of coins is still greater than the amount of money, return -1, otherwise, return the minimum number of coins
