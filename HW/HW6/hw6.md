@@ -15,7 +15,7 @@ Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
     - if positive, end the loop
     - if equal to the previous element, move on to the next element to avoid duplicates
     - otherwise, check all of the next elements for two numbers that can be added to this element to equal 0
-        - create a low and high pointer, incrementing low if the sum of high and low is too low and decrementing high if the sum is too high
+        - create a low and high pointer, incrementing low if the sum of high and low is too low and decrementing high if the sum is too high - loops while low < high
         - if the sum is the wanted value, add these values as a triplet to the list
             - also increment low and decrement high if duplicates exist
 - return the list
